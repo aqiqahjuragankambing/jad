@@ -1,0 +1,104 @@
+/* style.css */
+
+/* Reset sederhana */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Strip coklat gelap 10% */
+.hero-top {
+  background-color: #4b2e2e;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.hero-top h1 {
+  font-size: 1rem; /* pas untuk mobile */
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.orange-text {
+  color: #ff7f00;
+}
+
+/* Carousel */
+.carousel {
+  background-color: #f7d64a;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Animasi carousel */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(0); }
+  35% { transform: translateX(-100vw); }
+  65% { transform: translateX(-100vw); }
+  70% { transform: translateX(-200vw); }
+  95% { transform: translateX(-200vw); }
+  100% { transform: translateX(0); }
+}
+
+/* CTA Button */
+.hero-bottom {
+  background-color: #f7d64a;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #218838;
+}
