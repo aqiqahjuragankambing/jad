@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background-color: #ffffff; /* latar belakang putih */
       color: #333;
     }
 
@@ -16,54 +16,59 @@
     .hero {
       background: #4a0c0c;
       text-align: center;
-      padding: 10px 8px;
+      padding: 10px 8px; /* slim */
     }
     .hero h1 {
-      font-size: 12px;
+      font-size: 14px; /* kecil agar muat 1 baris */
       font-weight: bold;
       margin: 0;
       white-space: nowrap;
     }
-    .hero .white { color: #fff; }
-    .hero .yellow { color: #ffcc00; }
+    .hero .white {
+      color: #fff;
+    }
+    .hero .yellow {
+      color: #ffcc00;
+    }
 
     /* Slider Promo */
     .slider {
       display: flex;
       overflow-x: hidden;
       scroll-snap-type: x mandatory;
+      position: relative;
       margin: 20px 0;
     }
     .slide {
       flex: 0 0 100%;
       background: #fff;
       border-radius: 12px;
-      padding: 10px;
+      padding: 12px;
       scroll-snap-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
     .slide img {
-      width: 90%;
+      width: 95%;
       border-radius: 10px;
       margin: auto;
       display: block;
     }
 
-    /* Tambahan gambar */
+    /* Tambahan gambar di bawah slider */
     .extra-image {
       text-align: center;
       padding: 10px 0 20px;
     }
     .extra-image img {
-      width: 90%;
+      width: 92%;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
 
     /* Teks berjalan */
     .marquee {
-      background: #ffcc00;
+      background: #ffcc00; /* kuning */
       color: #4a0c0c;
       padding: 8px;
       font-size: 14px;
@@ -81,44 +86,35 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Running text di atas menu */
-    .bottom-marquee {
-      background: #ffcc00;
-      color: #4a0c0c;
-      padding: 6px;
-      font-size: 13px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    /* Bottom Menu */
+    /* Bottom Menu (mobile style dengan ikon custom) */
     .bottom-menu {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: #ffffff;
+      background: #ffffff; /* putih */
       display: flex;
-      justify-content: space-evenly;
-      padding: 10px 0;
+      justify-content: space-evenly; /* lebih rapat */
+      padding: 12px 0;
       border-top: 1px solid #ddd;
     }
     .bottom-menu a {
       color: #4a0c0c;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 13px;
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: transform 0.2s, color 0.2s;
     }
     .bottom-menu img {
-      width: 32px;
-      height: 32px;
+      width: 38px; /* lebih besar */
+      height: 38px;
       margin-bottom: 4px;
       transition: transform 0.2s;
     }
+    /* Efek hover */
     .bottom-menu a:hover {
-      color: #e53935;
+      color: #e53935; /* warna teks berubah saat hover */
       transform: scale(1.05);
     }
     .bottom-menu a:hover img {
@@ -138,13 +134,21 @@
 
   <!-- Slider Promo -->
   <section class="slider" id="promoSlider">
-    <div class="slide"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-1.jpg" alt="Promo Paket Aqiqah 2,1 Juta"></div>
-    <div class="slide"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-2.jpg" alt="Promo Paket Aqiqah 3,1 Juta"></div>
-    <div class="slide"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-3.jpg" alt="Promo Paket Aqiqah 3,8 Juta"></div>
-    <div class="slide"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-4.jpg" alt="Promo Paket Aqiqah 4,5 Juta"></div>
+    <div class="slide">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-1.jpg" alt="Promo Paket Aqiqah 2,1 Juta">
+    </div>
+    <div class="slide">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-2.jpg" alt="Promo Paket Aqiqah 3,1 Juta">
+    </div>
+    <div class="slide">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-3.jpg" alt="Promo Paket Aqiqah 3,8 Juta">
+    </div>
+    <div class="slide">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-4.jpg" alt="Promo Paket Aqiqah 4,5 Juta">
+    </div>
   </section>
 
-  <!-- Tambahan gambar -->
+  <!-- Tambahan gambar di bawah slider -->
   <div class="extra-image">
     <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Aqiqah-Pondok-Cabe.jpg" alt="Galeri Hidangan Daging">
   </div>
@@ -154,12 +158,7 @@
     <span>Alamat: Jl. H. Solichin Blok B11 RT. 01 RW. 28 Baktijaya Sukmajaya Depok 16418</span>
   </div>
 
-  <!-- Running text di atas menu -->
-  <div class="bottom-marquee">
-    Hubungi kami untuk promo terbaru & layanan cepat!
-  </div>
-
-  <!-- Bottom Menu -->
+  <!-- Bottom Menu dengan ikon custom -->
   <nav class="bottom-menu">
     <a href="#"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Lokasi.png?w=591&h=591" alt="Lokasi">Lokasi</a>
     <a href="#"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Hrg.png?w=591&h=591" alt="Harga">Harga</a>
@@ -184,7 +183,7 @@
     setInterval(() => {
       index = (index + 1) % slides.length;
       showSlide(index);
-    }, 4000);
+    }, 4000); // ganti slide tiap 4 detik
   </script>
 
 </body>
