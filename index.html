@@ -4,186 +4,461 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aqiqah Hebat - Juragan Kambing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
+    /* ============= Reset & Base Styles ============= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff; /* latar belakang putih */
+      background-color: #ffffff;
       color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* Hero Section */
+    /* ============= Hero Section ============= */
     .hero {
-      background: #4a0c0c;
+      background: linear-gradient(135deg, #4a0c0c 0%, #6b1515 100%);
       text-align: center;
-      padding: 10px 8px; /* slim */
-    }
-    .hero h1 {
-      font-size: 14px; /* kecil agar muat 1 baris */
-      font-weight: bold;
-      margin: 0;
-      white-space: nowrap;
-    }
-    .hero .white {
-      color: #fff;
-    }
-    .hero .yellow {
-      color: #ffcc00;
+      padding: 16px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Slider Promo */
+    .hero h1 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hero .white {
+      color: #ffffff;
+      margin-right: 4px;
+    }
+
+    .hero .yellow {
+      color: #ffc107;
+      font-weight: 800;
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 16px;
+      }
+    }
+
+    /* ============= Container ============= */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ============= Slider Promo ============= */
+    .slider-section {
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+    }
+
     .slider {
       display: flex;
-      overflow-x: hidden;
       scroll-snap-type: x mandatory;
-      position: relative;
-      margin: 20px 0;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
+
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+
     .slide {
       flex: 0 0 100%;
-      background: #fff;
-      border-radius: 12px;
-      padding: 12px;
-      scroll-snap-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      min-height: auto;
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+      padding: 0;
+      width: 100%;
     }
+
     .slide img {
-      width: 95%;
-      border-radius: 10px;
-      margin: auto;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       display: block;
+      animation: fadeIn 0.6s ease-in-out;
     }
 
-    /* Tambahan gambar di bawah slider */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Slider Indicators */
+    .slider-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d0d0d0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .indicator.active {
+      background: #ffc107;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ============= Extra Image Section ============= */
+    .extra-image-section {
+      padding: 20px 16px 24px;
+      background: #ffffff;
+    }
+
     .extra-image {
+      max-width: 600px;
+      margin: 0 auto;
       text-align: center;
-      padding: 10px 0 20px;
-    }
-    .extra-image img {
-      width: 92%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    }
-
-    /* Teks berjalan */
-    .marquee {
-      background: #ffcc00; /* kuning */
-      color: #4a0c0c;
-      padding: 8px;
-      font-size: 14px;
-      font-weight: bold;
+      border-radius: 16px;
       overflow: hidden;
-      white-space: nowrap;
-    }
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 18s linear infinite;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    /* Bottom Menu (mobile style dengan ikon custom) */
-    .bottom-menu {
+    .extra-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .extra-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* ============= Marquee (Text Berjalan) ============= */
+    .marquee-section {
+      background: linear-gradient(90deg, #ffc107 0%, #ffb300 100%);
+      color: #4a0c0c;
+      padding: 0;
+      overflow: hidden;
+      border-top: 2px solid #ff9800;
+      border-bottom: 2px solid #ff9800;
+      width: 100%;
+    }
+
+    .marquee {
+      display: flex;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      padding: 12px 0;
+      animation: scroll 25s linear infinite;
+    }
+
+    .marquee:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .marquee {
+        font-size: 14px;
+        animation: scroll 30s linear infinite;
+      }
+    }
+
+    /* ============= Bottom Navigation ============= */
+    .bottom-nav {
       position: fixed;
       bottom: 0;
+      left: 0;
+      right: 0;
       width: 100%;
-      background: #ffffff; /* putih */
+      background: #ffffff;
       display: flex;
-      justify-content: space-evenly; /* lebih rapat */
-      padding: 12px 0;
-      border-top: 1px solid #ddd;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8px 0;
+      border-top: 2px solid #e0e0e0;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+      z-index: 1000;
     }
-    .bottom-menu a {
-      color: #4a0c0c;
-      text-decoration: none;
-      font-size: 13px;
+
+    .nav-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.2s, color 0.2s;
+      justify-content: center;
+      text-decoration: none;
+      color: #4a0c0c;
+      font-size: 11px;
+      font-weight: 600;
+      gap: 4px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
     }
-    .bottom-menu img {
-      width: 38px; /* lebih besar */
-      height: 38px;
-      margin-bottom: 4px;
-      transition: transform 0.2s;
+
+    .nav-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 193, 7, 0.1);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+      z-index: -1;
     }
-    /* Efek hover */
-    .bottom-menu a:hover {
-      color: #e53935; /* warna teks berubah saat hover */
-      transform: scale(1.05);
+
+    .nav-item:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
     }
-    .bottom-menu a:hover img {
-      transform: scale(1.2);
+
+    .nav-item:active {
+      transform: scale(0.95);
+    }
+
+    .nav-icon {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .nav-icon {
+      transform: scale(1.15);
+    }
+
+    .nav-label {
+      text-align: center;
+      max-width: 60px;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 768px) {
+      .bottom-nav {
+        position: static;
+        max-width: 600px;
+        margin: 40px auto 0;
+        border-radius: 16px;
+        border-top: 2px solid #e0e0e0;
+      }
+
+      .nav-item {
+        font-size: 12px;
+        gap: 6px;
+      }
+
+      .nav-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .slider {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ============= Main Content Padding ============= */
+    main {
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        padding-bottom: 40px;
+      }
+    }
+
+    /* ============= Accessibility ============= */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>
-      <span class="white">AQIQAH HEBAT POWERED BY</span> 
-      <span class="yellow">JURAGAN KAMBING</span>
-    </h1>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>
+        <span class="white">AQIQAH HEBAT POWERED BY</span><span class="yellow">JURAGAN KAMBING</span>
+      </h1>
+    </section>
 
-  <!-- Slider Promo -->
-  <section class="slider" id="promoSlider">
-    <div class="slide">
-      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-1.jpg" alt="Promo Paket Aqiqah 2,1 Juta">
-    </div>
-    <div class="slide">
-      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-2.jpg" alt="Promo Paket Aqiqah 3,1 Juta">
-    </div>
-    <div class="slide">
-      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-3.jpg" alt="Promo Paket Aqiqah 3,8 Juta">
-    </div>
-    <div class="slide">
-      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-4.jpg" alt="Promo Paket Aqiqah 4,5 Juta">
-    </div>
-  </section>
+    <!-- Slider Promo Section -->
+    <section class="slider-section">
+      <div class="slider-wrapper">
+        <div class="slider" id="promoSlider">
+          <div class="slide">
+            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-1.jpg" alt="Promo Paket Aqiqah 2,1 Juta" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-2.jpg" alt="Promo Paket Aqiqah 3,1 Juta" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-3.jpg" alt="Promo Paket Aqiqah 3,8 Juta" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-4.jpg" alt="Promo Paket Aqiqah 4,5 Juta" loading="lazy">
+          </div>
+        </div>
+        <div class="slider-indicators" id="indicators"></div>
+      </div>
+    </section>
 
-  <!-- Tambahan gambar di bawah slider -->
-  <div class="extra-image">
-    <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Aqiqah-Pondok-Cabe.jpg" alt="Galeri Hidangan Daging">
-  </div>
+    <!-- Extra Image Section -->
+    <section class="extra-image-section">
+      <div class="extra-image">
+        <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Aqiqah-Pondok-Cabe.jpg" alt="Galeri Hidangan Daging" loading="lazy">
+      </div>
+    </section>
 
-  <!-- Teks berjalan -->
-  <div class="marquee">
-    <span>Alamat: Jl. H. Solichin Blok B11 RT. 01 RW. 28 Baktijaya Sukmajaya Depok 16418</span>
-  </div>
+    <!-- Marquee Section -->
+    <section class="marquee-section">
+      <div class="marquee">
+        📍 Alamat: Jl. H. Solichin Blok B11 RT. 01 RW. 28 Baktijaya Sukmajaya Depok 16418
+      </div>
+    </section>
+  </main>
 
-  <!-- Bottom Menu dengan ikon custom -->
-  <nav class="bottom-menu">
-    <a href="#"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Lokasi.png?w=591&h=591" alt="Lokasi"></a>
-    <a href="#"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Hrg.png?w=591&h=591" alt="Harga"></a>
-    <a href="#"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Logo%20jk%20kcl.png?w=1181&h=1181" alt="Juragan Kambing"></a>
-    <a href="https://wa.me/6281413333513"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Wa.png?w=591&h=591" alt="WhatsApp"></a>
-    <a href="tel:081413333513"><img src="https://6a11c3f5e92048e6f0238974.imgix.net/Telp.png?w=591&h=591" alt="Telepon"></a>
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="#lokasi" class="nav-item" title="Lihat Lokasi">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Lokasi.png?w=591&h=591" alt="Lokasi" class="nav-icon">
+      <span class="nav-label">Lokasi</span>
+    </a>
+    <a href="#harga" class="nav-item" title="Lihat Harga">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Hrg.png?w=591&h=591" alt="Harga" class="nav-icon">
+      <span class="nav-label">Harga</span>
+    </a>
+    <a href="#home" class="nav-item" title="Beranda">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Logo%20jk%20kcl.png?w=1181&h=1181" alt="Juragan Kambing" class="nav-icon">
+      <span class="nav-label">Home</span>
+    </a>
+    <a href="https://wa.me/6281413333513" class="nav-item" title="Chat WhatsApp" target="_blank" rel="noopener noreferrer">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Wa.png?w=591&h=591" alt="WhatsApp" class="nav-icon">
+      <span class="nav-label">WhatsApp</span>
+    </a>
+    <a href="tel:081413333513" class="nav-item" title="Hubungi Telepon">
+      <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Telp.png?w=591&h=591" alt="Telepon" class="nav-icon">
+      <span class="nav-label">Telepon</span>
+    </a>
   </nav>
 
-  <!-- JavaScript Slider -->
+  <!-- JavaScript -->
   <script>
+    // ========== Slider Auto Scroll ==========
     const slider = document.getElementById('promoSlider');
     const slides = slider.querySelectorAll('.slide');
-    let index = 0;
+    const indicatorsContainer = document.getElementById('indicators');
+    let currentIndex = 0;
 
-    function showSlide(i) {
-      slider.scrollTo({
-        left: slides[i].offsetLeft,
-        behavior: 'smooth'
+    // Create indicators
+    slides.forEach((_, index) => {
+      const indicator = document.createElement('div');
+      indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+      indicator.addEventListener('click', () => goToSlide(index));
+      indicatorsContainer.appendChild(indicator);
+    });
+
+    const indicators = document.querySelectorAll('.indicator');
+
+    function updateIndicators() {
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
       });
     }
 
+    function goToSlide(index) {
+      currentIndex = index;
+      slider.scrollTo({
+        left: slides[index].offsetLeft,
+        behavior: 'smooth'
+      });
+      updateIndicators();
+    }
+
+    // Auto scroll setiap 4 detik
     setInterval(() => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }, 4000); // ganti slide tiap 4 detik
+      currentIndex = (currentIndex + 1) % slides.length;
+      goToSlide(currentIndex);
+    }, 4000);
+
+    // Update indicator saat manual scroll
+    let scrollTimeout;
+    slider.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollLeft = slider.scrollLeft;
+        const slideWidth = slides[0].offsetWidth;
+        currentIndex = Math.round(scrollLeft / slideWidth);
+        updateIndicators();
+      }, 150);
+    });
   </script>
 
 </body>
