@@ -1105,6 +1105,245 @@
       transform: translateY(0);
     }
 
+    /* ============= Activity Gallery Section (NEW) ============= */
+    .activity-gallery-section {
+      padding: 40px 16px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .activity-gallery-section {
+        padding: 60px 20px;
+      }
+    }
+
+    .activity-gallery-header {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .activity-gallery-header {
+        max-width: 100%;
+      }
+    }
+
+    .activity-gallery-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #4a0c0c;
+      margin-bottom: 12px;
+    }
+
+    .activity-gallery-subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .activity-gallery-title {
+        font-size: 32px;
+      }
+
+      .activity-gallery-subtitle {
+        font-size: 15px;
+      }
+    }
+
+    /* ============= Mobile Slider (1 Image) ============= */
+    .activity-gallery-mobile {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .activity-gallery-mobile {
+        display: none;
+      }
+    }
+
+    .activity-slider-wrapper {
+      position: relative;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .activity-slider {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .activity-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .activity-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      aspect-ratio: 1 / 1;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .activity-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    /* Mobile Indicators */
+    .activity-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px;
+      background: #ffffff;
+      margin-top: 0;
+    }
+
+    .activity-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d0d0d0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .activity-indicator.active {
+      background: #ff9800;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ============= Desktop Slider (3 Images) ============= */
+    .activity-gallery-desktop {
+      display: none;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .activity-gallery-desktop {
+        display: block;
+      }
+    }
+
+    .activity-desktop-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 60px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .activity-desktop-wrapper {
+        padding: 0 40px;
+      }
+    }
+
+    .activity-desktop-slider {
+      display: flex;
+      gap: 24px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .activity-desktop-slide {
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 0;
+      height: 300px;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    .activity-desktop-slide:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .activity-desktop-slide:hover img {
+      transform: scale(1.05);
+    }
+
+    .activity-desktop-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    /* Navigation Arrows */
+    .activity-nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+      border: none;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+      z-index: 10;
+    }
+
+    .activity-nav-button:hover {
+      background: linear-gradient(135deg, #f57c00 0%, #e65100 100%);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+    }
+
+    .activity-nav-button:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .activity-nav-prev {
+      left: 0;
+    }
+
+    .activity-nav-next {
+      right: 0;
+    }
+
     /* ============= Bottom Navigation ============= */
     .bottom-nav {
       position: fixed;
@@ -1474,6 +1713,95 @@
         </div>
       </div>
     </section>
+
+    <!-- Activity Gallery Section -->
+    <section class="activity-gallery-section">
+      <div class="activity-gallery-header">
+        <h2 class="activity-gallery-title">GALERY</h2>
+        <p class="activity-gallery-subtitle">Dokumentasi beberapa kegiatan layanan Aqiqah Juragan Kambing</p>
+      </div>
+
+      <!-- Mobile Slider (1 Image) -->
+      <div class="activity-gallery-mobile">
+        <div class="activity-slider-wrapper">
+          <div class="activity-slider" id="activitySliderMobile">
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-1.jpg?w=800&h=800" alt="Activity 1" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-2.jpg?w=800&h=800" alt="Activity 2" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-3.jpg?w=800&h=800" alt="Activity 3" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-4.jpg?w=800&h=800" alt="Activity 4" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-5.jpg?w=800&h=800" alt="Activity 5" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-6.jpg?w=800&h=800" alt="Activity 6" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-7.jpg?w=800&h=800" alt="Activity 7" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-8.jpg?w=800&h=800" alt="Activity 8" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-9.jpg?w=800&h=800" alt="Activity 9" loading="lazy">
+            </div>
+            <div class="activity-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-10.jpg?w=800&h=800" alt="Activity 10" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="activity-indicators" id="activityIndicators"></div>
+      </div>
+
+      <!-- Desktop Slider (3 Images) -->
+      <div class="activity-gallery-desktop">
+        <div class="activity-desktop-wrapper">
+          <button class="activity-nav-button activity-nav-prev" id="prevBtn">‹</button>
+          
+          <div class="activity-desktop-slider" id="desktopSlider">
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-1.jpg?w=800&h=800" alt="Activity 1" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-2.jpg?w=800&h=800" alt="Activity 2" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-3.jpg?w=800&h=800" alt="Activity 3" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-4.jpg?w=800&h=800" alt="Activity 4" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-5.jpg?w=800&h=800" alt="Activity 5" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-6.jpg?w=800&h=800" alt="Activity 6" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-7.jpg?w=800&h=800" alt="Activity 7" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-8.jpg?w=800&h=800" alt="Activity 8" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-9.jpg?w=800&h=800" alt="Activity 9" loading="lazy">
+            </div>
+            <div class="activity-desktop-slide">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Juragan-Kambing-Aqiqah-10.jpg?w=800&h=800" alt="Activity 10" loading="lazy">
+            </div>
+          </div>
+
+          <button class="activity-nav-button activity-nav-next" id="nextBtn">›</button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Bottom Navigation -->
@@ -1502,7 +1830,7 @@
 
   <!-- JavaScript -->
   <script>
-    // ========== Slider Auto Scroll ==========
+    // ========== Slider Auto Scroll (Promo) ==========
     const slider = document.getElementById('promoSlider');
     const slides = slider.querySelectorAll('.slide');
     const indicatorsContainer = document.getElementById('indicators');
@@ -1550,6 +1878,124 @@
         updateIndicators();
       }, 150);
     });
+
+    // ========== Mobile Activity Gallery ==========
+    const activitySliderMobile = document.getElementById('activitySliderMobile');
+    const activityIndicatorsContainer = document.getElementById('activityIndicators');
+    const activitySlides = activitySliderMobile.querySelectorAll('.activity-slide');
+    let activeMobileIndex = 0;
+
+    // Create indicators for mobile
+    activitySlides.forEach((_, index) => {
+      const indicator = document.createElement('div');
+      indicator.className = `activity-indicator ${index === 0 ? 'active' : ''}`;
+      indicator.addEventListener('click', () => goToActivitySlide(index));
+      activityIndicatorsContainer.appendChild(indicator);
+    });
+
+    const activityIndicators = document.querySelectorAll('.activity-indicator');
+
+    function updateActivityIndicators() {
+      activityIndicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === activeMobileIndex);
+      });
+    }
+
+    function goToActivitySlide(index) {
+      activeMobileIndex = index;
+      activitySliderMobile.scrollTo({
+        left: activitySlides[index].offsetLeft,
+        behavior: 'smooth'
+      });
+      updateActivityIndicators();
+    }
+
+    // Auto scroll mobile setiap 5 detik
+    setInterval(() => {
+      activeMobileIndex = (activeMobileIndex + 1) % activitySlides.length;
+      goToActivitySlide(activeMobileIndex);
+    }, 5000);
+
+    // Update indicator saat manual scroll
+    let mobileScrollTimeout;
+    activitySliderMobile.addEventListener('scroll', () => {
+      clearTimeout(mobileScrollTimeout);
+      mobileScrollTimeout = setTimeout(() => {
+        const scrollLeft = activitySliderMobile.scrollLeft;
+        const slideWidth = activitySlides[0].offsetWidth;
+        activeMobileIndex = Math.round(scrollLeft / slideWidth);
+        updateActivityIndicators();
+      }, 150);
+    });
+
+    // ========== Desktop Activity Gallery (3 Images Slider) ==========
+    const desktopSlider = document.getElementById('desktopSlider');
+    const desktopSlides = desktopSlider.querySelectorAll('.activity-desktop-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    const slidesToShow = 3;
+    const totalSlides = desktopSlides.length;
+
+    function updateDesktopSlider() {
+      const slideWidth = desktopSlider.querySelector('.activity-desktop-slide').offsetWidth;
+      const gap = 24;
+      const offset = currentSlide * (slideWidth + gap);
+      desktopSlider.scrollTo({
+        left: offset,
+        behavior: 'smooth'
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - slidesToShow) {
+        currentSlide++;
+      } else {
+        currentSlide = 0; // Loop back to start
+      }
+      updateDesktopSlider();
+      resetAutoSlide();
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+      } else {
+        currentSlide = totalSlides - slidesToShow; // Loop to end
+      }
+      updateDesktopSlider();
+      resetAutoSlide();
+    }
+
+    function autoSlide() {
+      nextSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(autoSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    function resetAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Hover to stop auto-slide
+    const desktopWrapper = document.querySelector('.activity-desktop-wrapper');
+    desktopWrapper.addEventListener('mouseenter', stopAutoSlide);
+    desktopWrapper.addEventListener('mouseleave', startAutoSlide);
+
+    // Start auto-slide on load
+    startAutoSlide();
   </script>
 
 </body>
