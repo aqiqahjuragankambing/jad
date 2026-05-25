@@ -263,6 +263,290 @@
       }
     }
 
+    /* ============= Desktop CTA Button Section ============= */
+    .cta-section-desktop {
+      padding: 30px 16px;
+      background: #ffffff;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .cta-section-desktop {
+        display: flex;
+        padding: 40px 20px;
+      }
+    }
+
+    /* ============= CTA Button Section (Mobile Only) ============= */
+    .cta-section {
+      padding: 20px 16px;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .cta-section {
+        display: none;
+      }
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #f57c00 0%, #e65100 100%);
+      box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* ============= About Section (Mobile Only) ============= */
+    .about-section {
+      padding: 20px 16px 24px;
+      background: #ffffff;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .about-section {
+        display: none;
+      }
+    }
+
+    .about-image {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      text-align: center;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-content {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .about-content p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: #4a0c0c;
+      letter-spacing: 0.3px;
+    }
+
+    /* ============= Gallery Section ============= */
+    .gallery-section {
+      padding: 20px 16px 24px;
+      background: #ffffff;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-section {
+        padding: 40px 20px;
+        max-width: 100%;
+        display: block;
+      }
+    }
+
+    .gallery-container {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-container {
+        max-width: 100%;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .gallery-item {
+      text-align: center;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-item {
+        flex: 1;
+        max-width: 350px;
+      }
+    }
+
+    /* ============= Price Section ============= */
+    .price-section {
+      padding: 40px 16px;
+      background: #ffffff;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .price-section {
+        padding: 60px 20px;
+      }
+    }
+
+    .price-header {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .price-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #4a0c0c;
+      margin-bottom: 12px;
+    }
+
+    .price-subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .price-title {
+        font-size: 32px;
+      }
+
+      .price-subtitle {
+        font-size: 15px;
+      }
+    }
+
+    .price-container {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .price-container {
+        max-width: 100%;
+        flex-direction: row;
+        gap: 24px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+
+    .price-item {
+      text-align: center;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .price-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .price-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .price-item-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .price-item-button:hover {
+      background: linear-gradient(135deg, #f57c00 0%, #e65100 100%);
+      box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .price-item-button:active {
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .price-item {
+        flex: 1;
+        max-width: 280px;
+      }
+
+      .price-item img {
+        max-width: 100%;
+      }
+
+      .price-item-button {
+        margin-bottom: 0;
+      }
+    }
+
     /* ============= Bottom Navigation ============= */
     .bottom-nav {
       position: fixed;
@@ -439,6 +723,73 @@
       <div class="marquee-section-inner">
         <div class="marquee">
           📍 Alamat: Jl. H. Solichin Blok B11 RT. 01 RW. 28 Baktijaya Sukmajaya Depok 16418
+        </div>
+      </div>
+    </section>
+
+    <!-- Desktop CTA Button Section -->
+    <section class="cta-section-desktop">
+      <a href="https://wa.me/6281413333513" class="cta-button" target="_blank" rel="noopener noreferrer">
+        💬 Pesan Via WA
+      </a>
+    </section>
+
+    <!-- CTA Button Section (Mobile Only) -->
+    <section class="cta-section">
+      <a href="https://wa.me/6281413333513" class="cta-button" target="_blank" rel="noopener noreferrer">
+        💬 Pesan Via WA
+      </a>
+    </section>
+
+    <!-- About Section (Mobile Only) -->
+    <section class="about-section">
+      <div class="about-image">
+        <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Aqiqah-Juragan-Kambing-2025-2-scaled.jpg?w=2048&h=2560" alt="Juragan Kambing" loading="lazy">
+      </div>
+      <div class="about-content">
+        <p>
+          Juragan kambing fokus memberikan pelayanan dalam bidang Jasa Aqiqah. Keseriusan dalam bidang ini telah mengantarkan juragan kambing sebagai Jasa Aqiqah yang amanah & terpercaya
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Harga-Aqiqah-9-FILEminimizer.jpg?w=1024&h=1023" alt="Harga Aqiqah 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Harga-Aqiqah-8-FILEminimizer.jpg?w=1024&h=1023" alt="Harga Aqiqah 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Promo-Aqiqah-1-FILEminimizer.jpg?w=1024&h=1023" alt="Promo Aqiqah 1" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Price Section -->
+    <section class="price-section">
+      <div class="price-header">
+        <h2 class="price-title">DAFTAR HARGA AQIQAH</h2>
+        <p class="price-subtitle">Kami berikan penawaran paket terbaik pilihan yang disesuaikan dengan kebutuhan anda</p>
+      </div>
+      <div class="price-container">
+        <div class="price-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Harga-Aqiqah-10-FILEminimizer.jpg?w=1024&h=1023" alt="Paket Harga 1" loading="lazy">
+          <a href="https://wa.me/6281413333513" class="price-item-button" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+        </div>
+        <div class="price-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Harga-Aqiqah-11-FILEminimizer.jpg?w=1024&h=1023" alt="Paket Harga 2" loading="lazy">
+          <a href="https://wa.me/6281413333513" class="price-item-button" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+        </div>
+        <div class="price-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Harga-Aqiqah-12-FILEminimizer.jpg?w=1024&h=1023" alt="Paket Harga 3" loading="lazy">
+          <a href="https://wa.me/6281413333513" class="price-item-button" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+        </div>
+        <div class="price-item">
+          <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Harga-Aqiqah-13-FILEminimizer.jpg?w=1024&h=1023" alt="Paket Harga 4" loading="lazy">
+          <a href="https://wa.me/6281413333513" class="price-item-button" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
         </div>
       </div>
     </section>
