@@ -38,8 +38,8 @@
 
     @media (min-width: 768px) {
       .hero {
-        max-width: 600px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: none;
         padding: 16px 0;
       }
     }
@@ -93,8 +93,8 @@
 
     @media (min-width: 768px) {
       .slider-wrapper {
-        max-width: 600px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: none;
       }
     }
 
@@ -152,6 +152,14 @@
       gap: 8px;
       padding: 16px;
       background: #fff;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .slider-indicators {
+        max-width: none;
+      }
     }
 
     .indicator {
@@ -173,6 +181,13 @@
     .extra-image-section {
       padding: 20px 16px 24px;
       background: #ffffff;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .extra-image-section {
+        display: none;
+      }
     }
 
     .extra-image {
@@ -208,8 +223,8 @@
 
     @media (min-width: 768px) {
       .marquee-section {
-        max-width: 600px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: none;
       }
     }
 
@@ -333,18 +348,18 @@
       }
 
       .slider-section {
-        max-width: 600px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: none;
       }
 
       .bottom-nav {
         position: fixed;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 600px;
-        max-width: 100%;
-        border-radius: 16px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        transform: none;
+        border-radius: 0;
         border-top: 2px solid #e0e0e0;
       }
 
@@ -384,16 +399,28 @@
       <div class="slider-wrapper">
         <div class="slider" id="promoSlider">
           <div class="slide">
-            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-1.jpg" alt="Promo Paket Aqiqah 2,1 Juta" loading="lazy">
+            <picture>
+              <source media="(min-width: 768px)" srcset="https://juragankambing.co.id/wp-content/uploads/2025/03/Aqiqah-2024-4.jpg">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-1.jpg" alt="Promo Paket Aqiqah 2,1 Juta" loading="lazy">
+            </picture>
           </div>
           <div class="slide">
-            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-2.jpg" alt="Promo Paket Aqiqah 3,1 Juta" loading="lazy">
+            <picture>
+              <source media="(min-width: 768px)" srcset="https://juragankambing.co.id/wp-content/uploads/2025/03/Aqiqah-2024-2.jpg">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-2.jpg" alt="Promo Paket Aqiqah 3,1 Juta" loading="lazy">
+            </picture>
           </div>
           <div class="slide">
-            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-3.jpg" alt="Promo Paket Aqiqah 3,8 Juta" loading="lazy">
+            <picture>
+              <source media="(min-width: 768px)" srcset="https://juragankambing.co.id/wp-content/uploads/2025/03/Aqiqah-2024-3.jpg">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-3.jpg" alt="Promo Paket Aqiqah 3,8 Juta" loading="lazy">
+            </picture>
           </div>
           <div class="slide">
-            <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-4.jpg" alt="Promo Paket Aqiqah 4,5 Juta" loading="lazy">
+            <picture>
+              <source media="(min-width: 768px)" srcset="https://juragankambing.co.id/wp-content/uploads/2025/03/Aqiqah-2024-1.jpg">
+              <img src="https://6a11c3f5e92048e6f0238974.imgix.net/Slide-4.jpg" alt="Promo Paket Aqiqah 4,5 Juta" loading="lazy">
+            </picture>
           </div>
         </div>
         <div class="slider-indicators" id="indicators"></div>
